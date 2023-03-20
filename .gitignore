@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#g++ execute files(exe파일은 안 올리겠다)
+*.exe
+
 # User-specific files
 *.rsuser
 *.suo
