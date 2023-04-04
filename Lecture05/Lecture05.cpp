@@ -47,7 +47,7 @@ int print_stage_screen(int width, int height)
 	}
 	printf("\n");
 
-	for (i = 1; i < height - 1; i++)
+	for (i = 1; i < height; i++)
 	{
 		printf("*");
 		for (j = 1; j < width - 1; j++)
