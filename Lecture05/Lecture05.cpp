@@ -37,25 +37,37 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
 
-int print_stage_screen(int widht, int height)
+int print_stage_screen(int width, int height)
 {
+	int i, j;
 	gotoxy(100, 100);
-	printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("^                                          ^\n");
-	printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+	for (i = 0; i < width; i++)
+	{
+		printf("*");
+	}
+	printf("\n");
+
+	for (i = 1; i < height - 1; i++)
+	{
+		printf("*");
+		for (j = 1; j < width - 1; j++)
+		{
+			printf(" ");
+		}
+		printf("*\n");
+	}
+
+	for (i = 0; i < width; i++)
+	{
+		printf("*");
+	}
+	printf("\n");
+
 	printf("********************************************\n");
 	printf("*    타이틀 화면으로 돌아갈까요? (Y/N)     *\n");
 	return 0;
 }
+
 
 int main()
 {
@@ -95,7 +107,7 @@ int main()
 		case 1:
 			if (refresh == 1)
 			{
-				print_stage_screen(10, 10);
+				print_stage_screen(50, 25);
 				refresh = 10;
 			}
 			key_input = 0;
@@ -106,7 +118,7 @@ int main()
 				game_state = 0;
 				refresh = 0;
 			}
-			
+
 			break;
 
 		case 2:
